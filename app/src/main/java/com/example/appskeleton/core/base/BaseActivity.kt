@@ -29,4 +29,9 @@ abstract class BaseActivity: AppCompatActivity() {
         Toasty.success(context, message, Toast.LENGTH_SHORT, true).show()
     }
 
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount == 1) finish()
+        else super.onBackPressed()
+    }
+
 }
