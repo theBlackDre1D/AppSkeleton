@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 
-abstract class BaseFragment: DialogFragment() {
+abstract class BaseFragment: Fragment() {
 
     abstract val layoutResource: Int
+    protected val activity: BaseActivity
+        get() = getActivity() as BaseActivity
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(layoutResource, container, false)

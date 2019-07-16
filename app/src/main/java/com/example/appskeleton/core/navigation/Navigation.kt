@@ -4,6 +4,7 @@ import com.example.appskeleton.R
 import com.example.appskeleton.core.base.BaseActivity
 import com.example.appskeleton.core.base.BaseFragment
 import com.example.appskeleton.core.extension.simpleReplace
+import kotlin.reflect.KClass
 
 object Navigation {
 
@@ -14,5 +15,9 @@ object Navigation {
 
     fun pop(activity: BaseActivity) {
         activity.supportFragmentManager.popBackStack()
+    }
+
+    fun <T: BaseFragment> popToFragment(fragClass: KClass<T>, activity: BaseActivity) {
+        activity.supportFragmentManager.popBackStackImmediate(fragClass.simpleName, 0)
     }
 }
