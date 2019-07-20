@@ -9,6 +9,7 @@ import com.example.appskeleton.features.test.view_model.TestViewModel
 import kotlinx.android.synthetic.main.fragment_test.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+
 class TestFragment(override var params: Params?): BaseInputFragment<TestFragment.Params>(params) {
 
     override val layoutResource: Int
