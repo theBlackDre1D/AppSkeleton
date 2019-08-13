@@ -2,9 +2,9 @@ package com.example.appskeleton.core.use_case
 
 import kotlinx.coroutines.*
 
-abstract class UseCase<out Type: Any, in Params> {
+abstract class UseCase<out Type, in Params> {
 
-    private val job = SupervisorJob()
+    val job = SupervisorJob()
 
     abstract suspend fun run(params: Params): Type
 
@@ -15,6 +15,4 @@ abstract class UseCase<out Type: Any, in Params> {
         }
         CoroutineScope(Dispatchers.Main).launch { onResult(result.await()) }
     }
-
-    fun getJob() = job
 }

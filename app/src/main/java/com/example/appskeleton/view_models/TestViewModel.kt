@@ -1,20 +1,15 @@
 package com.example.appskeleton.view_models
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.example.appskeleton.core.base.BaseViewModel
 import com.example.appskeleton.core.use_case.GetRandomText
 
-class TestViewModel(private val getText: GetRandomText): ViewModel() {
+class TestViewModel(private val getText: GetRandomText): BaseViewModel<String, GetRandomText.Params, GetRandomText>(getText) {
 
-    val liveData = MutableLiveData<String>()
-
-    fun loadData(params: GetRandomText.Params) = getText(params) { handleRespond(it) }
-
-    private fun handleRespond(data: String) { liveData.value = data }
+    override val liveData = MutableLiveData<String>()
 
     override fun onCleared() {
         super.onCleared()
-
-        getText.getJob().cancel()
+        getText.job.cancel()
     }
 }

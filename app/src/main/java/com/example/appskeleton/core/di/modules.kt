@@ -1,5 +1,6 @@
 package com.example.appskeleton.core.di
 
+import com.example.appskeleton.core.net.StarWarsAPI
 import com.example.appskeleton.repositories.interfaces.TestRepository
 import com.example.appskeleton.core.use_case.GetRandomText
 import com.example.appskeleton.repositories.implementations.TestRepositoryImpl
@@ -17,6 +18,9 @@ val modules = module {
 
     // Use Case
     single { GetRandomText(get()) }
+
+    // Retrofit
+    single { StarWarsAPI.create() }
 
 //     Room database
 //    single { get<NotesDatabase>().noteDAO() }
