@@ -1,7 +1,6 @@
-package com.example.appskeleton.features.test
+package com.example.appskeleton.core.use_case
 
-import com.example.appskeleton.core.use_case.UseCase
-import com.example.appskeleton.features.TestRepository
+import com.example.appskeleton.repositories.interfaces.TestRepository
 
 class GetRandomText(val testRepository: TestRepository): UseCase<String, GetRandomText.Params>() {
 

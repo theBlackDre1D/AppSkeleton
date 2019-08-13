@@ -1,8 +1,8 @@
-package com.example.appskeleton.features.test.view_model
+package com.example.appskeleton.view_models
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.appskeleton.features.test.GetRandomText
+import com.example.appskeleton.core.use_case.GetRandomText
 
 class TestViewModel(private val getText: GetRandomText): ViewModel() {
 

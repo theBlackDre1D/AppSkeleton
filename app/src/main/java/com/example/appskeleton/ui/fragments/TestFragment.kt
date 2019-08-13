@@ -1,11 +1,11 @@
-package com.example.appskeleton.features.test
+package com.example.appskeleton.ui.fragments
 
 import androidx.lifecycle.Observer
 import com.example.appskeleton.R
 import com.example.appskeleton.core.base.BaseInputFragment
 import com.example.appskeleton.core.navigation.Navigation
-import com.example.appskeleton.features.SecondFragment
-import com.example.appskeleton.features.test.view_model.TestViewModel
+import com.example.appskeleton.core.use_case.GetRandomText
+import com.example.appskeleton.view_models.TestViewModel
 import kotlinx.android.synthetic.main.fragment_test.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

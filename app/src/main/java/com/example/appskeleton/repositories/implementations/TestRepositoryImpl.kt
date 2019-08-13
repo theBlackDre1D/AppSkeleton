@@ -1,6 +1,6 @@
-package com.example.appskeleton.features.test
+package com.example.appskeleton.repositories.implementations
 
-import com.example.appskeleton.features.TestRepository
+import com.example.appskeleton.repositories.interfaces.TestRepository
 
 class TestRepositoryImpl: TestRepository {
 
