@@ -22,7 +22,9 @@ abstract class BaseFragment: Fragment() {
         setupUI()
     }
 
-    open fun setupUI() {}
+    open fun setupUI() {
+        setupListeners()
+    }
 
     open fun setupViewModelsObservers() {}
     open fun setupListeners() {}

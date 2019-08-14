@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name = "android:windowActionBar">false</item>
         <item name = "android:windowNoTitle">true</item>
@@ -14,5 +14,64 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
+    <style name="Button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
+        <!--<item name="fontFamily">@font/sofia_pro_semibold</item>-->
+        <!-- use font here by app design -->
+    </style>
+
+
+    <style name="ButtonV3.Large" parent="Button">
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">@dimen/text_size_medium_small</item>
+    </style>
+
+    <style name="ButtonV3.Large.Full" parent="ButtonV3.Large">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="ButtonV3.Medium" parent="Button">
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="ButtonV3.Small" parent="Button">
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textSize">@dimen/text_size_very_small</item>
+    </style>
+
+    <style name="ButtonV3.Large.Primary" parent="ButtonV3.Large">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/blue_black</item>
+    </style>
+
+    <style name="ButtonV3.Large.Full.Primary" parent="ButtonV3.Large.Full">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/blue_black</item>
+    </style>
+
+    <style name="ButtonV3.Medium.Primary" parent="ButtonV3.Medium">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/blue_black</item>
+    </style>
+
+    <style name="ButtonV3.Small.Primary" parent="ButtonV3.Small">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/blue_black</item>
+    </style>
 
 </resources>

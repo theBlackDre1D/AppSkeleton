@@ -1,4 +1,4 @@
-package com.example.appskeleton.core.use_case
+package com.example.appskeleton.use_case
 
 import kotlinx.coroutines.*
 

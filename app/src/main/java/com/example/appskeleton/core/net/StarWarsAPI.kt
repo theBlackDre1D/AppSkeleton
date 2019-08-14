@@ -2,8 +2,7 @@ package com.example.appskeleton.core.net
 
 import com.example.appskeleton.BuildConfig
 import com.example.appskeleton.models.Person
-import kotlinx.coroutines.Deferred
-import retrofit2.Response
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -11,8 +10,8 @@ import retrofit2.http.Path
 
 interface StarWarsAPI {
 
-    @GET(" people/{id}/")
-    fun getPersonById(@Path("id") id: String): Deferred<Response<Person>>
+    @GET("people/{id}/")
+    fun getPersonById(@Path("id") id: String): Call<Person>
 
     companion object {
         fun create(): StarWarsAPI {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_black"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_medium_large"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="@string/main_fragment_information"
+        android:layout_marginTop="@dimen/margin_default"
+        android:paddingStart="@dimen/margin_default"
+        android:paddingBottom="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_default"
+        android:paddingEnd="@dimen/margin_default"
+        />
+
+    <include
+        android:id="@+id/vSearchContainer"
+        layout="@layout/view_search_field" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

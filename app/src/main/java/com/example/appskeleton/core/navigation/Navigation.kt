@@ -8,7 +8,10 @@ import kotlin.reflect.KClass
 
 object Navigation {
 
-    fun <A: BaseActivity, F: BaseFragment> switchFragments(activity: A, newFragment: F) {
+    // FRAGMENT
+
+    fun <A: BaseActivity, F: BaseFragment> switchFragments(activity: A, newFragment: F, clearBackStack: Boolean = false) {
+        if (clearBackStack) clearBackStack(activity)
         val transition = activity.supportFragmentManager.beginTransaction()
         transition.simpleReplace(R.id.container, newFragment)
     }
@@ -20,4 +23,14 @@ object Navigation {
     fun <T: BaseFragment> popToFragment(fragClass: KClass<T>, activity: BaseActivity) {
         activity.supportFragmentManager.popBackStackImmediate(fragClass.simpleName, 0)
     }
+
+    private fun clearBackStack(activity: BaseActivity) {
+        val fm = activity.supportFragmentManager
+        while (fm.backStackEntryCount > 0) {
+            fm.popBackStackImmediate()
+        }
+    }
+
+
+    // ACTIVITY
 }

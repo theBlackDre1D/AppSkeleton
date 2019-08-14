@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_black"
+    android:gravity="center">
+
+    <include
+        android:id="@+id/vEmailContainer"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        layout="@layout/view_input_form"
+        />
+
+    <include
+        android:id="@+id/vNameContainer"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        layout="@layout/view_input_form" />
+
+    <Button
+        android:id="@+id/bLogin"
+        android:text="@string/login_login_button"
+        style="@style/ButtonV3.Medium.Primary"/>
+
+</LinearLayout>

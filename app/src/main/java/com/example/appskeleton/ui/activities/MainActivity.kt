@@ -5,7 +5,9 @@ import android.os.Handler
 import com.example.appskeleton.R
 import com.example.appskeleton.core.base.BaseActivity
 import com.example.appskeleton.core.navigation.Navigation
-import com.example.appskeleton.ui.fragments.TestFragment
+import com.example.appskeleton.flow_controllers.LoginFlowController
+import com.example.appskeleton.managers.UserManager
+import com.example.appskeleton.ui.fragments.MainFragment
 
 class MainActivity : BaseActivity() {
 
@@ -13,8 +15,13 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Navigation.switchFragments(this,
-            TestFragment(TestFragment.Params("nothing"))
-        )
+        Handler().postDelayed({ nextStep() }, 1200) // not best practice force user to wait
+    }
+
+    private fun nextStep() {
+        if (!UserManager.isLogin) { LoginFlowController(this).start() }
+        else {
+            Navigation.switchFragments(this, MainFragment(), true)
+        }
     }
 }

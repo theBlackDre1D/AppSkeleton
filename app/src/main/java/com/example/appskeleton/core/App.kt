@@ -2,12 +2,14 @@ package com.example.appskeleton.core
 
 import android.app.Activity
 import android.app.Application
+import android.content.ContextWrapper
 import android.os.Bundle
 import com.example.appskeleton.core.base.BaseActivity
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import com.example.appskeleton.core.di.modules
+import com.pixplicity.easyprefs.library.Prefs
 import java.lang.ref.WeakReference
 
 class App: Application() {
@@ -22,6 +24,7 @@ class App: Application() {
 
         setupKoin()
         registerCallbacks()
+        setupPrefs()
     }
 
     private fun registerCallbacks() {
@@ -51,5 +54,14 @@ class App: Application() {
             androidContext(this@App)
             modules(modules)
         }
+    }
+
+    private fun setupPrefs() {
+        Prefs.Builder()
+            .setContext(this)
+            .setMode(ContextWrapper.MODE_PRIVATE)
+            .setPrefsName(packageName)
+            .setUseDefaultSharedPreference(true)
+            .build()
     }
 }
