@@ -37,6 +37,7 @@ class MainFragment: BaseFragment() {
     override fun setupViewModelsObservers() {
         getPersonVM.liveData.observe(this, Observer {
             it?.let { adapter.addData(listOf(it)) }
+            showOrHideLoading(false)
         })
     }
 
@@ -44,6 +45,7 @@ class MainFragment: BaseFragment() {
         vSearchContainer.bSearch.setOnClickListener {
             val id = vSearchContainer.etSearch.getFullText()
             getPersonVM.loadData(GetPerson.Params(id))
+            showOrHideLoading(true)
         }
     }
 

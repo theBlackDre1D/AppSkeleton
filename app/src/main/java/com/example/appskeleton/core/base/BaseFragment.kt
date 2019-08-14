@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.appskeleton.core.extension.visibleOrGone
+import kotlinx.android.synthetic.main.activity_main.*
 
 abstract class BaseFragment: Fragment() {
 
     abstract val layoutResource: Int
-    protected val activity: BaseActivity
+    private val activity: BaseActivity
         get() = getActivity() as BaseActivity
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -28,5 +30,7 @@ abstract class BaseFragment: Fragment() {
 
     open fun setupViewModelsObservers() {}
     open fun setupListeners() {}
+
+    fun showOrHideLoading(visible: Boolean = true) { activity.loadingContainer.visibleOrGone(visible) }
 
 }
