@@ -42,6 +42,7 @@
         android:id="@+id/bSearch"
         style="@style/ButtonV3.Medium.Primary"
         android:text="@string/main_fragment_search"
+        android:enabled="false"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginBottom="@dimen/margin_small"
         app:layout_constraintEnd_toEndOf="parent"

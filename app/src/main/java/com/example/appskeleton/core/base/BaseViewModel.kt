@@ -11,7 +11,7 @@ abstract class BaseViewModel<DataType, Params, UC: UseCase<DataType, Params>>
 
     open fun loadData(params: Params) = useCase(params) { handleRespond(it) }
 
-    private fun handleRespond(data: DataType) { liveData.value = data }
+    open fun handleRespond(data: DataType) { liveData.value = data }
 
     override fun onCleared() {
         super.onCleared()
