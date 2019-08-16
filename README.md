@@ -1,8 +1,8 @@
 # AppSkeleton
-My own app skeleton with best programing practices (in my opinion) . 
+My own app skeleton with best programing practices (in my opinion). App just fetch data from API and saves them to database via ROOM API.
   
   
-StarWars API: https://www.swapi.co/
+API: https://www.swapi.co/
   
 TODO: Implement DataBinding, ARCore  
   
